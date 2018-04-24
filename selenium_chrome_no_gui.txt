@@ -1,0 +1,22 @@
+1. vi /usr/bin/google-chrome
+最后一行改成：
+exec -a "$0" "$HERE/chrome" "$@" --user-data-dir --no-sandbox
+
+2.
+yum update
+
+yum install Xvfb
+
+yum -install libXfont
+
+yum install xorg-x11-fonts*
+
+3. 
+cp xvfbd /etc/init.d/xvfb
+chmod +x /etc/init.d/xvfb
+chkconfig xvfb on
+service xvfb start
+
+4.export  DISPLAY=:7
+
+

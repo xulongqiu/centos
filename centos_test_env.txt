@@ -1,0 +1,69 @@
+﻿yum install epel-release
+yum install axel
+axel -n 20 https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+yum install google-chrome-stable_current_x86_64.rpm
+vi /usr/bin/google-chrome
+倒数第二行 “$@” 后添加 --no-sandbox --user-data-dir
+
+google-chrome 
+
+# python3.x
+http://blog.csdn.net/shaobingj126/article/details/50290359  1-4 steps
+
+#no gui configuration
+http://jarvi.iteye.com/blog/2191755
+
+
+# 安装chrome
+1.配置yum下载源：
+
+在目录 /etc/yum.repos.d/ 下新建文件 google-chrome.repo, 并且在该文件中添加如下内容：
+
+CentOS7 安装Chrome浏览器 
+
+1 [google-chrome]
+2 name=google-chrome
+3 baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+4 enabled=1
+5 gpgcheck=1
+6 gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+7 ~                                                                
+安装google chrome浏览器：
+
+[root@localhost yum.repos.d]# yum -y install google-chrome-stable
+PS: Google官方源可能在中国无法使用，导致安装失败或者在国内无法更新，可以添加以下参数来安装：
+
+[root@localhost yum.repos.d]# yum -y install google-chrome-stable --nogpgcheck
+
+#安装Xvfb
+yum update
+
+yum install Xvfb
+
+yum -install libXfont
+
+yum install xorg-x11-fonts*
+
+#安装selenium、pyvirtualdisplay
+
+pip install selenium
+
+pip install pyvirtualdisplay
+
+#下载chromedriver
+
+从https://sites.google.com/a/chromium.org/chromedriver/home下载chromedriver
+cp chromedriver /usr/bin/
+
+# demo
+from selenium import webdriver  
+from pyvirtualdisplay import Display  
+  
+  
+display = Display(visible=0, size=(800,600))  
+display.start()  
+driver = webdriver.Chrome("./chromedriver")  
+driver.get("http://www.baidu.com")  
+print driver.page_source  
+
+http://www.mamicode.com/info-detail-1663865.html

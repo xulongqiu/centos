@@ -1,0 +1,1 @@
+The profile appears to be in use by another Google Chrome process (27860) on another computer (localhost.localdomain).  Chrome has locked the profile so that it doesn't get corrupted.  If you are sure no other processes are using this profile, you can unlock the profile and relaunch Chrome.
